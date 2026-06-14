@@ -12,10 +12,10 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
     default: siteTitle,
-    template: "%s | 인천강아지파양",
+    template: "%s | 안양강아지파양",
   },
   description: siteDescription,
-  keywords: [...targetKeywords, "인천 강아지 파양", "인천 유기견", "아가펫"],
+  keywords: [...targetKeywords, "안양 강아지 파양", "안양 유기견", "아가펫"],
   authors: [{ name: "아가펫" }],
   creator: "아가펫",
   publisher: "아가펫",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "ko_KR",
     url: siteUrl,
-    siteName: "인천강아지파양 · 인천유기견보호소 안내",
+    siteName: "안양강아지파양 · 안양유기견보호소 안내",
     title: siteTitle,
     description: siteDescription,
     images: [
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
         url: "/images/shelter-01.jpg",
         width: 1200,
         height: 630,
-        alt: "인천강아지파양·인천유기견보호소 보호소 전경",
+        alt: "안양강아지파양·안양유기견보호소 보호소 전경",
       },
     ],
   },
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
   category: "반려동물",
   verification: {
     other: {
-      "naver-site-verification": "091fae8fdeaa82ef35cb80e5e7fe98ef87346630",
+      "naver-site-verification": "530409071aa08b3d4f3881710a714d3633b5c550",
     },
   },
 };
