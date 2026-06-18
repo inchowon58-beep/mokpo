@@ -1,3 +1,9 @@
+type HeaderProps = {
+  brandName: string;
+  brandSubtitle: string;
+  homeHref?: string;
+};
+
 const navItems = [
   { href: "#about", label: "소개" },
   { href: "#services", label: "보호 서비스" },
@@ -6,16 +12,20 @@ const navItems = [
   { href: "#faq", label: "문의" },
 ];
 
-export default function Header() {
+export default function Header({
+  brandName,
+  brandSubtitle,
+  homeHref = "/",
+}: HeaderProps) {
   return (
     <header className="sticky top-0 z-40 border-b border-sand/60 bg-cream/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-8">
-        <a href="#" className="group shrink-0">
+        <a href={homeHref} className="group shrink-0">
           <span className="block font-serif text-base font-medium text-charcoal sm:text-lg">
-            목포강아지·고양이파양
+            {brandName}
           </span>
           <span className="block text-[10px] font-medium uppercase tracking-widest text-warm">
-            Mokpo Pet Shelter Guide
+            {brandSubtitle}
           </span>
         </a>
 

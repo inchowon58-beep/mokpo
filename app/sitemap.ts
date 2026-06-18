@@ -1,13 +1,19 @@
 import type { MetadataRoute } from "next";
-import { siteUrl } from "@/lib/seo";
+import { getRegionPageUrl, gyeongsanSeo, mokpoSeo } from "@/lib/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: siteUrl,
+      url: getRegionPageUrl(mokpoSeo),
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 1,
+    },
+    {
+      url: getRegionPageUrl(gyeongsanSeo),
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
     },
   ];
 }

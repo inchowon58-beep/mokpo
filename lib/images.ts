@@ -1,15 +1,6 @@
 import fs from "fs";
 import path from "path";
 
-const ALT_PREFIXES = [
-  "목포강아지파양·목포강아지보호소 전경",
-  "목포고양이파양·목포고양이보호소 케어",
-  "목포유기견보호소 위탁견",
-  "목포유기묘보호소 입양 대기묘",
-  "강아지무료분양 대기 반려견",
-  "고양이무료분양 대기 반려묘",
-] as const;
-
 export type ShelterImage = {
   src: string;
   alt: string;
@@ -22,8 +13,19 @@ function sortKey(filename: string): number {
 
 const MAX_IMAGES = 10;
 
-export function getShelterImages(): ShelterImage[] {
-  const dir = path.join(process.cwd(), "public", "images");
+export function getShelterImages(
+  imageFolder = "",
+  altPrefixes: readonly string[] = [],
+): ShelterImage[] {
+  const dir = imageFolder
+    ? path.join(process.cwd(), "public", "images", imageFolder)
+    : path.join(process.cwd(), "public", "images");
+
+  if (!fs.existsSync(dir)) {
+    return [];
+  }
+
+  const basePath = imageFolder ? `/images/${imageFolder}` : "/images";
 
   return fs
     .readdirSync(dir)
@@ -31,7 +33,14 @@ export function getShelterImages(): ShelterImage[] {
     .sort((a, b) => sortKey(a) - sortKey(b))
     .slice(0, MAX_IMAGES)
     .map((file, index) => ({
-      src: `/images/${file}`,
-      alt: `${ALT_PREFIXES[index % ALT_PREFIXES.length]} — 실제 보호소 사진 ${index + 1}`,
+      src: `${basePath}/${file}`,
+      alt: altPrefixes.length
+        ? `${altPrefixes[index % altPrefixes.length]} — 실제 보호소 사진 ${index + 1}`
+        : `보호소 사진 ${index + 1}`,
     }));
+}
+
+export function getFirstShelterImagePath(imageFolder = ""): string | null {
+  const images = getShelterImages(imageFolder);
+  return images[0]?.src ?? null;
 }
