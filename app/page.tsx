@@ -3,6 +3,7 @@ import FloatingBar from "@/components/FloatingBar";
 import Header from "@/components/Header";
 import SectionLabel from "@/components/SectionLabel";
 import { getShelterImages } from "@/lib/images";
+import { seoTagline } from "@/lib/seo";
 
 const processSteps = [
   {
@@ -41,12 +42,12 @@ const serviceItems = [
     text: "반려묘를 돌보기 어려운 상황에서 전주고양이파양·전주고양이보호소·전주유기묘보호소 상담을 통해 신중한 파양 절차를 안내합니다.",
   },
   {
-    title: "전주강아지보호소·전주유기견보호소 연계",
-    text: "전주강아지보호소 및 전주유기견보호소와 협력하여 반려견이 보호소에서도 안심할 수 있는 환경을 마련합니다.",
+    title: "전주강아지보호소·강아지보호소 연계",
+    text: "전주강아지보호소·강아지보호소·전주유기견보호소와 협력하여 반려견이 보호소에서도 안심할 수 있는 환경을 마련합니다.",
   },
   {
-    title: "전주고양이보호소·유기묘보호소 연계",
-    text: "전주고양이보호소·전주유기묘보호소와 연계하여 반려묘가 스트레스 없이 지낼 수 있는 보호 환경을 준비합니다.",
+    title: "전주고양이보호소·고양이보호소 연계",
+    text: "전주고양이보호소·고양이보호소·전주유기묘보호소와 연계하여 반려묘가 스트레스 없이 지낼 수 있는 보호 환경을 준비합니다.",
   },
   {
     title: "전주유기견센터·전주유기견보호센터 안내",
@@ -83,9 +84,19 @@ const faqItems = [
       "이사, 알레르기, 경제적 사정, 가족 구성 변화 등 부득이한 사유로 직접 돌보기 어려울 때 이용하실 수 있습니다. 전주강아지보호소·전주유기견보호소 상담을 통해 임시 보호, 가족 위탁 등 다른 선택지도 함께 안내해 드립니다.",
   },
   {
+    question: "전주강아지보호소·강아지보호소 이용은 어떻게 하나요?",
+    answer:
+      "전주강아지파양·전주강아지보호소·강아지보호소·전주유기견보호소 상담을 통해 반려견 파양·보호 절차를 안내합니다. 강아지파양·강아지무료분양 관련 문의도 전화로 가능합니다.",
+  },
+  {
     question: "전주고양이파양·고양이보호소 이용은 어떻게 하나요?",
     answer:
-      "반려묘를 직접 돌보기 어려운 경우 전주고양이파양·전주고양이보호소·전주유기묘보호소 상담을 통해 파양 절차를 안내합니다. 고양이파양·고양이보호소·유기묘보호소 관련 궁금한 점도 전화로 문의하실 수 있습니다.",
+      "반려묘를 직접 돌보기 어려운 경우 전주고양이파양·전주고양이보호소·고양이보호소·전주유기묘보호소 상담을 통해 파양 절차를 안내합니다. 고양이파양·고양이무료분양·유기묘보호소 관련 궁금한 점도 전화로 문의하실 수 있습니다.",
+  },
+  {
+    question: "전주유기견·유기묘보호소 전문 안내는 무엇인가요?",
+    answer:
+      "전주유기견보호소·전주유기묘보호소·전주유기견유기묘보호소 연계를 통해 반려견·반려묘의 보호·파양·입양 전 과정을 안내하는 전문 상담 서비스입니다. 전주유기견센터·전주유기견보호센터와도 연계합니다.",
   },
   {
     question: "강아지무료분양·고양이무료분양은 어떻게 신청하나요?",
@@ -133,26 +144,28 @@ export default function HomePage() {
           <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 py-16 sm:px-8 lg:grid-cols-2 lg:py-28">
             <div>
               <p className="text-sm text-warm">
-                안락사 없는 보호공간 · 전주유기견·유기묘보호소 · 아가펫
+                {seoTagline}
               </p>
               <h1
                 id="hero-heading"
                 className="heading-display mt-6"
               >
-                전주강아지·고양이파양,
+                전주강아지파양 · 전주고양이파양,
                 <br />
                 작은 발걸음에
                 <br />
                 <span className="italic text-aga-brown">큰 사랑을 담습니다.</span>
               </h1>
               <p className="mt-2 font-serif text-lg text-aga-brown sm:text-xl">
-                전주유기견보호소 · 전주유기묘보호소 · 반려동물을 위한 진심 어린 안내
+                전주유기견·유기묘보호소 · 전주강아지보호소 · 전주고양이보호소 ·
+                강아지보호소 · 고양이보호소 전문 안내
               </p>
               <p className="mt-6 max-w-lg text-sm leading-relaxed text-warm sm:text-base">
                 전주강아지파양·전주고양이파양·전주강아지보호소·전주고양이보호소·
-                전주유기견보호소·전주유기묘보호소 전문 상담센터입니다.
-                전주유기견센터·전주유기견보호센터와 연계하여 반려견·반려묘 파양,
-                유기동물보호소 위탁, 강아지무료분양·고양이무료분양 입양까지
+                전주유기견보호소·전주유기묘보호소·전주유기견유기묘보호소 전문
+                상담센터입니다. 강아지보호소·고양이보호소·강아지파양·고양이파양
+                상담부터 전주유기견센터·전주유기견보호센터 연계, 반려견·반려묘
+                파양, 유기동물보호소 위탁, 강아지무료분양·고양이무료분양 입양까지
                 신중하고 따뜻한 절차로 안내해 드립니다.
               </p>
               <div className="mt-10 flex flex-wrap gap-3">
@@ -296,12 +309,13 @@ export default function HomePage() {
               id="shelter-heading"
               className="heading-display mt-6 max-w-xl"
             >
-              전주강아지·고양이보호소·
+              전주강아지보호소·전주고양이보호소·
               <br />
-              전주유기견·유기묘보호센터 시설
+              강아지보호소·고양이보호소·전주유기견·유기묘보호센터 시설
             </h2>
             <p className="mt-6 max-w-2xl text-sm leading-relaxed text-warm sm:text-base">
-              전주유기견보호소·전주유기묘보호소·유기동물보호소 기준에 맞춰
+              전주유기견보호소·전주유기묘보호소·전주유기견유기묘보호소·
+              강아지보호소·고양이보호소·유기동물보호소 기준에 맞춰
               반려견·반려묘가 안전하고 편안하게 지낼 수 있도록 깨끗한 보호
               공간, 따뜻한 일상 케어, 꾸준한 건강 관리를 제공합니다.
             </p>
@@ -456,8 +470,8 @@ export default function HomePage() {
               연락주세요.
             </h2>
             <p className="mx-auto mt-6 max-w-md text-sm leading-relaxed text-warm-light">
-              전주강아지파양·전주고양이파양, 전주유기견센터·전주유기견보호센터·
-              전주유기묘보호소 이용, 강아지무료분양·고양이무료분양·
+              전주강아지파양·전주고양이파양, 전주강아지보호소·전주고양이보호소·
+              강아지보호소·고양이보호소·전주유기견·유기묘보호소 이용, 강아지무료분양·고양이무료분양·
               유기동물보호소 입양에 관한 모든 궁금한 점은 전화 한 통으로
               해결하실 수 있습니다.
             </p>
@@ -498,9 +512,10 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl px-4 sm:px-8">
           <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
             <div className="text-center sm:text-left">
-              <p className="font-serif text-lg">전주강아지·고양이파양</p>
-              <p className="mt-1 text-[10px] uppercase tracking-widest text-warm-light">
-                AGAPET · Jeonju Pet Shelter Guide
+              <p className="font-serif text-lg">전주강아지파양 · 전주고양이파양</p>
+              <p className="mt-1 text-[10px] leading-relaxed text-warm-light">
+                전주유기견·유기묘보호소 · 전주강아지보호소 · 전주고양이보호소 ·
+                강아지보호소 · 고양이보호소 전문 안내
               </p>
             </div>
             <nav aria-label="푸터 메뉴">
@@ -541,12 +556,12 @@ export default function HomePage() {
           <p className="mt-6 text-center text-[10px] leading-relaxed text-warm-light/70">
             전주강아지파양 · 전주고양이파양 · 전주강아지보호소 ·
             전주고양이보호소 · 전주유기견보호소 · 전주유기묘보호소 ·
-            전주유기견센터 · 전주유기견보호센터 · 강아지무료분양 ·
-            고양이무료분양 · 고양이파양 · 고양이보호소 · 유기묘보호소 ·
-            유기동물보호소
+            전주유기견유기묘보호소 · 전주유기견센터 · 전주유기견보호센터 ·
+            강아지보호소 · 고양이보호소 · 강아지파양 · 고양이파양 ·
+            강아지무료분양 · 고양이무료분양 · 유기묘보호소 · 유기동물보호소
           </p>
           <p className="mt-3 text-center text-[10px] text-warm-light/50">
-            © {new Date().getFullYear()} 아가펫보호소 · 전주강아지·고양이파양 안내
+            © {new Date().getFullYear()} 아가펫보호소 · {seoTagline}
           </p>
         </div>
       </footer>

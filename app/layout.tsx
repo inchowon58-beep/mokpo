@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import {
   getStructuredData,
+  seoTagline,
   siteDescription,
   siteTitle,
   siteUrl,
@@ -15,7 +16,16 @@ export const metadata: Metadata = {
     template: "%s | 전주강아지·고양이파양",
   },
   description: siteDescription,
-  keywords: [...targetKeywords, "전주 강아지 파양", "전주 고양이 파양", "전주 유기견", "전주 유기묘", "아가펫"],
+  keywords: [
+    ...targetKeywords,
+    "전주 강아지 파양",
+    "전주 고양이 파양",
+    "전주 유기견",
+    "전주 유기묘",
+    "전주 강아지보호소",
+    "전주 고양이보호소",
+    "아가펫",
+  ],
   authors: [{ name: "아가펫" }],
   creator: "아가펫",
   publisher: "아가펫",
@@ -34,7 +44,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "ko_KR",
     url: siteUrl,
-    siteName: "전주강아지파양 · 전주고양이파양 · 전주유기견·유기묘보호소 안내",
+    siteName: seoTagline,
     title: siteTitle,
     description: siteDescription,
     images: [
@@ -42,7 +52,7 @@ export const metadata: Metadata = {
         url: "/images/shelter-01.png",
         width: 1200,
         height: 630,
-        alt: "전주강아지파양·전주고양이파양·전주유기견·유기묘보호소 전경",
+        alt: "전주강아지파양·전주고양이파양·전주강아지보호소·전주고양이보호소·전주유기견·유기묘보호소·강아지보호소·고양이보호소",
       },
     ],
   },
